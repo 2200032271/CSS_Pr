@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara's Kitchen</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#faf6ef;
+    color:#29251f;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#faf6ef;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:5px;
+    color:#344c35;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+            from {
+                transform: translateX(-15%);
+            }
+
+            to {
+                transform: translateX(25%);
+            }
+        }
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#29251f;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#bd623a;
+    transform:translateY(-3px);
+}
+
+.nav-btn{
+    padding:13px 24px;
+    background:#344c35;
+    color:white !important;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    background:#bd623a;
+    transform:translateY(-3px);
+}
+
+/* HERO SECTION */
+
+.hero{
+    min-height:650px;
+    background:
+    linear-gradient(rgba(20,25,15,0.35),rgba(20,25,15,0.45)),
+    url("https://images.jdmagicbox.com/v2/comp/bangalore/v9/080pxx80.xx80.210402164822.x3v9/catalogue/andhra-gunpowder-sahakara-nagar-bangalore-andhra-restaurants-dlkqz0j45y.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:70px 10%;
+    color:white;
+}
+
+.hero-content{
+    max-width:650px;
+    animation:moveup 1s ease;
+}
+
+.hero-content p{
+    font-size:15px;
+    letter-spacing:3px;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+.hero-content h1{
+    font-size:75px;
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero-content h3{
+    font-size:20px;
+    font-weight:normal;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 28px;
+    text-decoration:none;
+    background:#d18a50;
+    color:white;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#344c35;
+    transform:translateY(-5px);
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#344c35;
+}
+
+/* INTRO SECTION */
+
+.intro{
+    padding:90px 10%;
+    text-align:center;
+}
+
+.intro h2{
+    font-size:42px;
+    color:#344c35;
+    margin-bottom:20px;
+}
+
+.intro p{
+    font-size:17px;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
+    color:#777;
+}
+
+/* RECIPE SECTION */
+
+.recipes{
+    padding:70px 8%;
+}
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:45px;
+}
+
+.section-heading p{
+    color:#bd623a;
+    letter-spacing:3px;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.section-heading h2{
+    font-size:43px;
+    color:#344c35;
+}
+
+.view-btn{
+    text-decoration:none;
+    color:#344c35;
+    border-bottom:1px solid #344c35;
+    padding-bottom:6px;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    color:#bd623a;
+    border-color:#bd623a;
+}
+
+.recipe-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.recipe-card{
+    background:white;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.recipe-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+
+.recipe-image{
+    height:280px;
+    overflow:hidden;
+}
+
+.recipe-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.recipe-card:hover img{
+    transform:scale(1.12);
+}
+
+.recipe-info{
+    padding:25px;
+}
+
+.recipe-info p{
+    color:#bd623a;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.recipe-info h3{
+    font-size:24px;
+    margin-bottom:12px;
+    color:#344c35;
+}
+
+.recipe-info h4{
+    font-size:14px;
+    font-weight:normal;
+    color:#888;
+}
+
+/* ABOUT SECTION */
+
+.about{
+    padding:100px 10%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    background:#f0e8da;
+}
+
+.about-image{
+    height:550px;
+    overflow:hidden;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.about-image:hover img{
+    transform:scale(1.08);
+}
+
+.about-content p{
+    color:#bd623a;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.about-content h2{
+    font-size:48px;
+    line-height:1.2;
+    color:#344c35;
+    margin-bottom:25px;
+}
+
+.about-content h4{
+    font-size:17px;
+    line-height:1.9;
+    color:#777;
+    font-weight:normal;
+    margin-bottom:25px;
+}
+
+/* COOKING SECTION */
+
+.cooking{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.cooking h4{
+    color:#bd623a;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.cooking h2{
+    font-size:45px;
+    color:#344c35;
+    margin-bottom:40px;
+}
+
+.cooking-box{
+    min-height:400px;
+    background:
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.45)),
+    url("https://png.pngtree.com/thumb_back/fh260/background/20240927/pngtree-colorful-spices-and-fresh-herbs-on-rustic-wooden-table-natural-flavors-image_16265336.jpg");
+    background-position:center;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    transition:0.5s;
+
+}
+
+.cooking-box:hover{
+    background-position:center;
+}
+
+.cooking-box h3{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+/* COOKBOOK SECTION */
+
+.cookbook{
+    padding:90px 10%;
+    background:#344c35;
+    color:white;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+}
+
+.cookbook-image{
+    height:450px;
+    overflow:hidden;
+}
+
+.cookbook-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.cookbook-image:hover img{
+    transform:scale(1.08);
+}
+
+.cookbook-content p{
+    color:#e2aa76;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.cookbook-content h2{
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.cookbook-content h4{
+    font-size:16px;
+    font-weight:normal;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* RESERVATION SECTION */
+
+.reservation{
+    padding:100px 10%;
+    text-align:center;
+    background:#f0e8da;
+}
+
+.reservation p{
+    color:#bd623a;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.reservation h2{
+    font-size:48px;
+    color:#344c35;
+    margin-bottom:20px;
+}
+
+.reservation h4{
+    max-width:650px;
+    margin:auto;
+    font-weight:normal;
+    line-height:1.8;
+    color:#777;
+    margin-bottom:30px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+    padding:90px 10%;
+    text-align:center;
+}
+
+.newsletter p{
+    color:#bd623a;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.newsletter h2{
+    font-size:45px;
+    color:#344c35;
+    margin-bottom:20px;
+}
+
+.newsletter h4{
+    font-weight:normal;
+    color:#777;
+    margin-bottom:30px;
+}
+
+.newsletter form{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.newsletter input{
+    padding:16px;
+    width:280px;
+    border:1px solid #ccc;
+    outline:none;
+    background:transparent;
+}
+
+.newsletter input:focus{
+    border-color:#344c35;
+}
+
+.newsletter button{
+    padding:16px 30px;
+    border:none;
+    background:#344c35;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.newsletter button:hover{
+    background:#bd623a;
+    transform:translateY(-4px);
+}
+
+/* FOOTER */
+
+.footer{
+    padding:35px 8%;
+    background:#344c35;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer h2{
+    letter-spacing:5px;
+}
+
+.footer-links{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#e2aa76;
+}
+
+/* ANIMATION */
+
+@keyframes moveup{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:20px 4%;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+    }
+
+    .hero-content h1{
+        font-size:55px;
+    }
+
+    .recipe-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        height:450px;
+    }
+
+    .cookbook{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:15px;
+    }
+
+    .nav-links a{
+        font-size:12px;
+    }
+
+    .nav-btn{
+        padding:10px 14px;
+    }
+
+    .hero{
+        min-height:550px;
+        padding:50px 7%;
+    }
+
+    .hero-content h1{
+        font-size:43px;
+    }
+
+    .hero-content h3{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-wrap:wrap;
+    }
+
+    .intro h2{
+        font-size:30px;
+    }
+
+    .section-heading{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .section-heading h2{
+        font-size:32px;
+    }
+
+    .recipe-grid{
+        grid-template-columns:1fr;
+    }
+
+    .recipe-image{
+        height:250px;
+    }
+
+    .about{
+        padding:60px 7%;
+        gap:35px;
+    }
+
+    .about-content h2{
+        font-size:36px;
+    }
+
+    .about-image{
+        height:350px;
+    }
+
+    .cooking h2{
+        font-size:32px;
+    }
+
+    .cooking-box h3{
+        font-size:28px;
+    }
+
+    .cookbook{
+        padding:60px 7%;
+    }
+
+    .cookbook-content h2{
+        font-size:36px;
+    }
+
+    .reservation h2,
+    .newsletter h2{
+        font-size:34px;
+    }
+
+    .newsletter input{
+        width:100%;
+    }
+
+    .newsletter button{
+        width:100%;
+    }
+
+    .footer{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">JASSU&SREE HOME MADE FOOD</div>
+
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#cooking">Cook Along</a>
+        <a href="#reservation">Order Pickup</a>
+        <a href="#cookbook">Cookbook</a>
+        <a href="#reservation" class="nav-btn">Book a Table</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p style="color: rgb(216, 216, 48)">Rayalaseema Maryada & Ghaatu.</p>
+
+        <h1>Seema ghaatu... Seema nela, Seema maryada...</h1>
+
+        <h3>
+        <b style="color: rgb(230, 238, 0);">Kaasta karam ekkuve, kani apyayatha anthakante ekkuve. Rayalaseema thara tharala sampradaya ruchulu mee pallemlo! <hr></b> 
+        </h3>
+
+        <div class="hero-buttons">
+
+            <a href="#reservation" class="btn">Book a Table</a>
+
+            <a href="#recipes" class="btn btn-outline">
+                Find Your Favourite
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO SECTION -->
+
+<section class="intro">
+
+    <h2>Randi! Kurchoni mana Seema ruchulni thinesi pondi..</h2>
+
+    <p> <i>
+        From our home kitchen to your table—love, spice, and authentic Rayalaseema soul on every plate.</i> 
+    </p>
+
+</section>
+
+
+<!-- RECIPES SECTION -->
+
+<section class="recipes" id="recipes">
+
+    <div class="section-heading">
+
+        <div>
+            <p>Maaa kitchen nundi direct ga mee table meedhaki</p>
+            <h2>Miku nachina dish select chesukondi!"</h2>
+        </div>
+
+        <a href="#" class="view-btn">All Recipes →</a>
+
+    </div>
+
+
+    <div class="recipe-grid">
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYO88lFeNjWlxAIHiS7KeRYHNpfFWtzXnsekWKNK92pXaRZqxOSrRmsCjE&s=10" alt="Ragi sangati& Natu kodi">
+            </div>
+
+            <div class="recipe-info">
+                <h3>Ragi sangati& Natu kodi</h3>
+                <h4>Ragi Sangati is a traditional Andhra and Rayalaseema staple made from a wholesome mix of rice and finger millet flour, usually paired with spicy country chicken (Natu Kodi) or rich gravies</h4>
+            </div>
+
+        </div>
+
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                <img src="https://nandhini.com/wp-content/uploads/2026/09/C4_September_-22_Rayalaseema-Biryani-banner-0-768x439.webp" alt="Chicken dish">
+            </div>
+
+            <div class="recipe-info">
+                <h3>Rayalaseema Biryani – Dry, Fiery Style</h3>
+                <h4>Drier, darker, and hotter than traditional biryani—this is Kadapa's signature spice-belt recipe. Made in oil with fiery chilies and zero fluff, it is pure, high-heat comfort food.</h4>
+            </div>
+
+        </div>
+
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                <img src="https://nandhini.com/wp-content/uploads/2026/08/C4-August-4-Natu-Kodi-banner--1024x576.webp" alt="Spicy food">
+            </div>
+
+            <div class="recipe-info">
+                <h3>Natu Kodi</h3>
+                <h4>Authentic, free-range desi chicken raised in local villages. Leaner and firmer than regular chicken, it is slow-cooked into a rich, fiery tamarind gravy packed with true Andhra flavor.</h4>
+            </div>
+
+        </div>
+
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                <img src="https://nandhini.com/wp-content/uploads/2026/08/C4-August-6-andhra-kodi-pulao-banner-1-1-1024x576.webp" alt="Andhra Kodi Pulao">
+            </div>
+
+            <div class="recipe-info">
+                <h3>Andhra Kodi Pulao </h3>
+                <h4>Andhra kodi pulao is a one-pot chicken rice in which basmati and chicken cook together, so the rice takes its flavour straight from the meat’s juices as it steams. It is lighter and less layered than biryani, built on whole spices, shallots and fresh green-chilli heat rather than a separate dum stage.
+
+</h4>
+            </div>
+
+        </div>
+
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                <img src="https://nandhini.com/wp-content/uploads/2026/07/C4-July-20-Ulavacharu-Biryani-banner--1024x576.webp" alt="Ulavacharu Biryani">
+            </div>
+
+            <div class="recipe-info">
+                <h3>"Ulavacharu Biryani</h3>
+                <h4>Most biryanis begin with rice and meat. This one begins with a soup. Ulavacharu biryani takes ulavacharu (a slow-simmered horse-gram extract that Coastal Andhra households eat with rice and ghee) and layers it through the biryani instead, so the rice cooks in that dark, tangy broth. The result is a biryani that tastes of the earth rather than only of chilli heat, earthy and sour and deep in a way a standard Andhra biryani is not.</h4>
+            </div>
+
+        </div>
+
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                <img src="https://nandhini.com/wp-content/uploads/2026/08/Andhra-prawns_-1024x576.webp" alt="Rayalaseema Biryani ">
+            </div>
+
+            <div class="recipe-info">
+                <h3>Chepala Pulusu, Royyala Iguru & Coastal Fry and Rice </h3>
+                <h4>Along the Krishna and Godavari coast, a seafood meal is rarely one dish on its own. A bowl of chepala pulusu (fish in a tamarind-soured gravy) sits and darkens as it waits. Beside it, royyala iguru (thick, slow-cooked prawns) has reduced until the oil beads on the surface. Somewhere near the edge, the fish fry and prawn fry rarely reach the table whole, because someone always gets to them first. Coastal Andhra reads these four as one spread, not four recipes to look up separately.</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="about">
+
+    <div class="about-image">
+
+        <img src="./jagadeesh.jpg" alt="Home kitchen">
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>A LITTLE ABOUT THE COOK</p>
+
+        <h2>HI, I'M MOPURI JAGADEESH..</h2>
+
+        <h4>
+
+            I learned to cook by watching, tasting, and asking for just a little more.
+             The food I grew up with was generous, cooked in oil with fiery chilies and pure ghee, and always made for sharing. 
+             Here, I'm bringing the untamed heat and soul-satisfying flavors of Rayalaseema directly to your table—from wholesome Ragi Sangati paired with slow-cooked Natu Kodi, to Kadapa's drier, darker, and bolder Rayalaseema Biryani. Every dish is cooked with passion, authentic tradition, and a whole lot of heart.
+        </h4>
+
+        <a href="#cooking" class="btn">Cook Something With Me</a>
+
+    </div>
+
+</section>
+
+
+<!-- COOKING SECTION -->
+
+<section class="cooking" id="cooking">
+
+    <h4>Randi! Cook along with Amara <br> rich ghee, fiery chilies, and authentic heritage recipes made simple for your kitchen.</h4>
+
+    <h2>Join Amara in the kitchen. Miku nachina traditional vantakalu, easy ga vandesukondi!</h2>
+
+    <div class="cooking-box">
+
+        <div>
+
+            <h3>Cook Along With Jassu</h3>
+
+            <a href="#recipes" class="btn">
+                Watch The Cook-Alongs
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COOKBOOK SECTION -->
+
+<section class="cookbook" id="cookbook">
+
+    <div class="cookbook-image">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBfKWKmtuem4WdHHTjs0Ci9jImtwVbtQYiC4eAI5r4YA&s=10" alt="Food cookbook">
+
+    </div>
+
+
+    <div class="cookbook-content">
+
+        <p>MY FIRST COOKBOOK</p>
+
+        <h2>FROM MY TABLE TO YOUR SHELF.</h2>
+
+        <h4>
+            Family favourites. New traditions.
+            All the flavour and heart of my kitchen,
+            in a book you'll come back to again and again.
+
+            At Amara's Table — West African roots,
+            a world of flavour.
+        </h4>
+
+    </div>
+
+</section>
+
+
+<!-- RESERVATION SECTION -->
+
+<section class="reservation" id="reservation">
+
+    <p>A SEAT AT THE TABLE</p>
+
+    <h2>MAKE YOUR DINING EXPERIENCE SPECIAL.</h2>
+
+    <h4>
+        Reserve a table at <strong>Jassu</strong>'s Kitchen.
+        Pick a date and time, and we'll have
+        your table waiting.
+    </h4>
+
+    <a href="#" class="btn">Book A Table</a>
+
+</section>
+
+
+<!-- NEWSLETTER SECTION -->
+
+<section class="newsletter">
+
+    <p>YOU'RE INVITED</p>
+
+    <h2>A SEAT AT MY TABLE.</h2>
+
+    <h4>
+        Fresh recipes, little kitchen stories,
+        and first dibs on what's cooking next.
+    </h4>
+
+    <form>
+
+        <input type="text" placeholder="Your first name">
+
+        <input type="email" placeholder="Your email address">
+
+        <button type="submit">FeedBack</button>
+
+    </form>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <h2>Jassu'S KITCHEN</h2>
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#recipes">Recipes</a>
+
+        <a href="#cooking">Cook Along</a>
+
+        <a href="#cookbook">Cookbook</a>
+
+        <a href="#reservation">Contact</a>
+
+    </div>
+
+
+</footer>
+
+</body>
+</html>
